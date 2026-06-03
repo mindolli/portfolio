@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="포트폴리오">
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Film 1 -->
+    <article class="film">
+      <h1 class="film-title">GPT : Guilty Personal Trainer</h1>
+      <dl class="film-info">
+        <dt>촬영년도</dt>
+        <dd>2026</dd>
+        <dt>장르</dt>
+        <dd>로맨스</dd>
+        <dt>직책</dt>
+        <dd>편집</dd>
+        <dt>시놉시스</dt>
+        <dd class="synopsis">AI를 사용하는 것에 너무 익숙해져버린 ‘겨울’과 ‘서현’ 그들은 과제, 시험 심지어는 사람과의 대화에도 AI를 사용한다. 한편 ‘겨울’은 ‘서현’과 랜덤 소개팅에서 만나게 되고 여자와 대화하는 것에 서툰 ‘겨울’은 AI를 사용하여 ‘서현’과 대화를 한다.
+        카페에서 만난 둘은 평범한 대화를 이어나가지 못하고 AI에 의존하여 대화를 하다 ‘겨울’은 AI를 사용하는 것을 ‘서현’에게 들키게 되는데.....</dd>
+      </dl>
+      <div class="stills">
+        <img src="images/GPT/Clip0009_1-0007.png" alt="GPT 스틸컷 1" width="640" height="360" loading="lazy">
+        <img src="images/GPT/Clip0009_1-0008.png" alt="GPT 스틸컷 2" width="640" height="360" loading="lazy">
+        <img src="images/GPT/Clip0009_1-0009.png" alt="GPT 스틸컷 3" width="640" height="360" loading="lazy">
+      </div>
+    </article>
+
+    <hr class="divider">
+
+    <!-- Film 2 -->
+    <article class="film">
+      <h1 class="film-title">너만을 사랑해</h1>
+      <dl class="film-info">
+        <dt>촬영년도</dt>
+        <dd>2025</dd>
+        <dt>장르</dt>
+        <dd>로맨스 / 미스터리 / 실험영화</dd>
+        <dt>직책</dt>
+        <dd>콘티, 촬영 보조</dd>
+        <dt>시놉시스</dt>
+        <dd class="synopsis">연인관계인 재형과 지현은 재형의 공연 연습을 위해 동아리방에서 만난다. 재형의 공연 연습이 길어지자, 그를 기다리다 지친 지현은 잠깐 잠에 든다. 꿈속에서 지현은 알 수 없는 기묘한 체험을 경험한다.</dd>
+      </dl>
+      <div class="stills">
+        <img src="images/OnlyYou/onlyyou-01.png" alt="너만을 사랑해 스틸컷 1" width="640" height="360" loading="lazy">
+        <img src="images/OnlyYou/onlyyou-02.png" alt="너만을 사랑해 스틸컷 2" width="640" height="360" loading="lazy">
+        <img src="images/OnlyYou/onlyyou-03.png" alt="너만을 사랑해 스틸컷 3" width="640" height="360" loading="lazy">
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Lightbox dialog -->
+  <dialog class="lightbox" id="lightbox">
+    <button type="button" id="lightbox-close" aria-label="닫기">&times;</button>
+    <img src="" alt="" id="lightbox-img">
+  </dialog>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // 스틸컷 클릭 → 라이트박스 열기
+    document.querySelectorAll('.stills img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.showModal();
+      });
+    });
+
+    // 닫기 버튼
+    lightboxClose.addEventListener('click', () => {
+      lightbox.close();
+    });
+
+    // backdrop 클릭으로 닫기
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.close();
+      }
+    });
+  </script>
+</body>
+</html>

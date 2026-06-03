@@ -1,0 +1,131 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Gothic A1", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #222;
+  background: #fff;
+  line-height: 1.7;
+  padding: 60px 20px;
+}
+
+/* Layout */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Film Section */
+.film {
+  margin-bottom: 80px;
+}
+
+.film:last-child {
+  margin-bottom: 0;
+}
+
+/* Film Info */
+.film-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.film-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 4px;
+  margin-bottom: 32px;
+}
+
+.film-info dt {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.film-info dd {
+  font-size: 0.95rem;
+}
+
+.film-info dd:last-child {
+  margin-bottom: 0;
+}
+
+/* Synopsis */
+.synopsis {
+  white-space: pre-line;
+}
+
+/* Stills */
+.stills {
+  display: flex;
+  gap: 12px;
+}
+
+.stills img {
+  width: calc((100% - 24px) / 3);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .stills {
+    flex-direction: column;
+  }
+
+  .stills img {
+    width: 100%;
+  }
+}
+
+/* Lightbox (dialog) */
+.lightbox {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox button {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 80px 0;
+}
